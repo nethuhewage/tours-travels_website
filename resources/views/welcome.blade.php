@@ -39,31 +39,48 @@
 
 
     <!-- Navbar -->
-    <nav class="fixed top-0 w-full z-50 transition-transform duration-300">
-        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
-            <!-- Logo -->
-            <div class="flex items-center space-x-2">
-                <img src="https://www.galletourssrilanka.com/assets/img/logo.png" class="h-13 w-auto" alt="Logo">
-            </div>
+    <nav class="fixed top-0 w-full z-50 bg-transparent transition-transform duration-300">
+    <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+            <img src="https://www.galletourssrilanka.com/assets/img/logo.png" class="h-13 w-auto" alt="Logo">
+        </div>
 
-            <!-- Nav Links -->
-            <div class="hidden md:flex space-x-8 text-white font-semibold">
-                <a href="#" class="hover:text-yellow-600">Home</a>
-                <a href="#" class="hover:text-yellow-600">About Us</a>
-                <a href="#" class="hover:text-yellow-600">Service</a>
-                <a href="#" class="hover:text-yellow-600">Tour Packages</a>
-                <a href="#" class="hover:text-yellow-600">Contact Us</a>
-            </div>
+        <!-- Nav Links -->
+        <div class="hidden md:flex space-x-8 text-white font-semibold" id="nav-links">
+            <a href="#" class="hover:text-yellow-600">Home</a>
+            <a href="#" class="hover:text-yellow-600">About Us</a>
+            <a href="#" class="hover:text-yellow-600">Service</a>
+            <a href="#" class="hover:text-yellow-600">Tour Packages</a>
+            <a href="#" class="hover:text-yellow-600">Contact Us</a>
+        </div>
 
-            <!-- Call Button -->
-            <a href="tel:+94777220979" 
-            class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold px-4 py-2 rounded-full flex items-center space-x-2">
+        <!-- Call Button -->
+        <a href="tel:+94777220979" 
+           class="hidden md:flex bg-yellow-400 hover:bg-yellow-500 text-white font-bold px-4 py-2 rounded-full flex items-center space-x-2">
             <i class="fas fa-phone"></i>
             <span>Call Us: +94 (77) 722 0979</span>
-            </a>
+        </a>
 
-        </div>
-    </nav>
+        <!-- Hamburger Button -->
+        <button id="nav-toggle" class="md:hidden text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="hidden md:hidden bg-black/90" id="mobile-menu">
+        <a href="#" class="block px-6 py-3 text-white hover:bg-yellow-500">Home</a>
+        <a href="#" class="block px-6 py-3 text-white hover:bg-yellow-500">About Us</a>
+        <a href="#" class="block px-6 py-3 text-white hover:bg-yellow-500">Service</a>
+        <a href="#" class="block px-6 py-3 text-white hover:bg-yellow-500">Tour Packages</a>
+        <a href="#" class="block px-6 py-3 text-white hover:bg-yellow-500">Contact Us</a>
+        <a href="tel:+94777220979" class="block px-6 py-3 text-white hover:bg-yellow-500 flex items-center space-x-2">
+            <i class="fas fa-phone"></i>
+            <span>Call Us: +94 (77) 722 0979</span>
+        </a>
+    </div>
+</nav>
 </div>
 
 <section class="bg-gray-50 py-16">
@@ -103,18 +120,19 @@
       <div class="grid grid-cols-2 gap-8 text-center">
         <!-- Service 1 -->
         <div>
-          <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full text-yellow-500 border">
-            <i class="fas fa-plane"></i>
-          </div>
-          <h3 class="mt-4 font-semibold text-gray-900 text-xl">Airport Transfer</h3>
-          <p class="text-gray-600 text-sm mt-2 ">
-            Travel to your desired destinations with some of the best airport transfers.
-          </p>
+            <div class="flex justify-center items-center w-20 h-20 mx-auto rounded-full text-yellow-500 border text-3xl">
+                <i class="fas fa-plane"></i>
+            </div>
+            <h3 class="mt-4 font-semibold text-gray-900 text-xl">Airport Transfer</h3>
+            <p class="text-gray-600 text-sm mt-2">
+                Travel to your desired destinations with some of the best airport transfers.
+            </p>
         </div>
+
 
         <!-- Service 2 -->
         <div>
-          <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full text-yellow-500 border">
+          <div class="flex justify-center items-center w-20 h-20 mx-auto rounded-full text-yellow-500 border text-3xl">
             <i class="fas fa-map"></i>
           </div>
           <h3 class="mt-4 font-semibold text-gray-900 text-xl">Arrange Tours</h3>
@@ -125,7 +143,7 @@
 
         <!-- Service 3 -->
         <div>
-          <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full text-yellow-500 border">
+          <div class="flex justify-center items-center w-20 h-20 mx-auto rounded-full text-yellow-500 border text-3xl">
             <i class="fas fa-taxi"></i>
           </div>
           <h3 class="mt-4 font-semibold text-gray-900 text-xl">Taxi Service</h3>
@@ -136,7 +154,7 @@
 
         <!-- Service 4 -->
         <div>
-          <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full text-yellow-500 border">
+          <div class="flex justify-center items-center w-20 h-20 mx-auto rounded-full text-yellow-500 border text-3xl">
             <i class="fas fa-hotel"></i>
           </div>
           <h3 class="mt-4 font-semibold text-gray-900 text-xl">Arrange Accommodation</h3>
@@ -205,7 +223,7 @@
     </div>
 
 
-    <div class="flex flex-col lg:flex-row items-start lg:items-stretch gap-4 ml-[250px] mb-10">
+   <div class="flex flex-col lg:flex-row items-start lg:items-stretch gap-4 lg:ml-[250px] ml-4 mb-10">
       
       <!-- Carousel -->
       <div class="relative max-w-3xl w-full lg:w-3/4">
@@ -288,46 +306,70 @@
 
 <!--  Contact Us  -->
 
-<section>
-    <div class="container mx-auto py-8 text-center mt-10">
+  <section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-4 text-center">
     <!-- Heading -->
-    <div class="text-center max-w-3xl mx-auto">
-      <h2 class="text-4xl md:text-4xl font-bold text-gray-900">Contact Us</h2>
-      <p class=" text-gray-600 leading-relaxed mt-5">
-        Our goal is to create a Tailormade vacation of your dreams.
-         The possibilities are endless, so with your help we 
-         can get to know you and your interess
-         and create the perfect travel experience just for you.
+    <div class="max-w-3xl mx-auto mb-12">
+      <h2 class="text-3xl font-bold text-gray-800">Contact Us</h2>
+      <p class="text-gray-600 mt-2">
+        Our goal is to create a Tailormade vacation of your dreams. The possibilities are endless, 
+        so with your help we can get to know you and your interests and create the perfect travel experience just for you.
       </p>
     </div>
-    <div class="flex justify-center space-x-8 mb-8 mt-10 text-gray-800">
-        <!-- Location -->
-        <div class="flex items-center space-x-3">
-            <div class="bg-yellow-400 text-white p-3 rounded-full flex items-center justify-center">
-                <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <p>186, Colombo Road, Mahamodara, Galle, Sri Lanka</p>
+
+    <!-- Contact Cards -->
+    <div class="flex flex-col md:flex-row justify-center items-stretch gap-8 mb-12">
+      
+      <!-- Location -->
+      <div class="flex-1 bg-white rounded-xl shadow-lg p-6 flex items-center space-x-4 hover:shadow-2xl transition">
+        <div class="bg-yellow-400 text-white p-4 rounded-full flex items-center justify-center text-2xl">
+          <i class="fas fa-map-marker-alt"></i>
         </div>
-
-        <!-- Phone -->
-        <div class="flex items-center space-x-3">
-            <div class="bg-yellow-400 text-white p-3 rounded-full flex items-center justify-center">
-                <i class="fas fa-phone"></i>
-            </div>
-            <p>+94 (77) 722 0979</p>
+        <div class="text-left">
+          <h4 class="font-bold text-gray-900">Our Location</h4>
+          <p class="text-gray-600 mt-1">186, Colombo Road, Mahamodara, Galle, Sri Lanka</p>
         </div>
+      </div>
 
-        <!-- Email -->
-        <div class="flex items-center space-x-3">
-            <div class="bg-yellow-400 text-white p-3 rounded-full flex items-center justify-center">
-                <i class="fas fa-envelope"></i>
-            </div>
-            <p>galletourssrilanka@gmail.com</p>
+      <!-- Phone -->
+      <div class="flex-1 bg-white rounded-xl shadow-lg p-6 flex items-center space-x-4 hover:shadow-2xl transition">
+        <div class="bg-yellow-400 text-white p-4 rounded-full flex items-center justify-center text-2xl">
+          <i class="fas fa-phone"></i>
         </div>
-</div>
+        <div class="text-left">
+          <h4 class="font-bold text-gray-900">Call Us</h4>
+          <p class="text-gray-600 mt-1">+94 (77) 722 0979</p>
+        </div>
+      </div>
 
-</div>
+      <!-- Email -->
+      <div class="flex-1 bg-white rounded-xl shadow-lg p-6 flex items-center space-x-4 hover:shadow-2xl transition">
+        <div class="bg-yellow-400 text-white p-4 rounded-full flex items-center justify-center text-2xl">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="text-left">
+          <h4 class="font-bold text-gray-900">Email</h4>
+          <p class="text-gray-600 mt-1">galletourssrilanka@gmail.com</p>
+        </div>
+      </div>
+    </div>
 
+    <!-- Contact Form -->
+    <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+      <h3 class="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <input type="text" placeholder="Your Name" class="p-4 border rounded-lg w-full focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+        <input type="email" placeholder="Your Email" class="p-4 border rounded-lg w-full focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+        <input type="text" placeholder="Subject" class="p-4 border rounded-lg w-full md:col-span-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+        <textarea placeholder="Message" rows="5" class="p-4 border rounded-lg w-full md:col-span-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none"></textarea>
+        <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold px-6 py-3 rounded-full md:col-span-2 transition">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section>
+    
 <footer class="bg-gray-900 text-white text-center py-6">
     <div class="mb-4">
         <img src="https://www.galletourssrilanka.com/assets/img/logo.png" alt="Galle Tours & Travels Logo" class="mx-auto mb-2 h-13 w-auto">
@@ -413,6 +455,14 @@
   setInterval(nextSlide, 5000);
 </script>
 
+<script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    navToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
 
 
 </body>
