@@ -32,9 +32,9 @@
         </div>
 
     <!-- Navigation buttons -->
-    <button onclick="prevSlide()" 
+    <button onclick="prevHeroSlide()" 
             class="absolute left-5 top-1/2 transform -translate-y-1/2 bg-white/30 text-white px-4 py-2 rounded-full hover:bg-white/50">‹</button>
-    <button onclick="nextSlide()" 
+    <button onclick="nextHeroSlide()" 
             class="absolute right-5 top-1/2 transform -translate-y-1/2 bg-white/30 text-white px-4 py-2 rounded-full hover:bg-white/50">›</button>
 
 
@@ -57,9 +57,11 @@
 
             <!-- Call Button -->
             <a href="tel:+94777220979" 
-               class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold px-4 py-2 rounded-full">
-               📞 Call Us: +94 (77) 722 0979
+            class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold px-4 py-2 rounded-full flex items-center space-x-2">
+            <i class="fas fa-phone"></i>
+            <span>Call Us: +94 (77) 722 0979</span>
             </a>
+
         </div>
     </nav>
 </div>
@@ -101,8 +103,8 @@
       <div class="grid grid-cols-2 gap-8 text-center">
         <!-- Service 1 -->
         <div>
-          <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full bg-yellow-100 text-yellow-500">
-            ✈️
+          <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full text-yellow-500 border">
+            <i class="fas fa-plane"></i>
           </div>
           <h3 class="mt-4 font-semibold text-gray-900 text-xl">Airport Transfer</h3>
           <p class="text-gray-600 text-sm mt-2 ">
@@ -112,8 +114,8 @@
 
         <!-- Service 2 -->
         <div>
-          <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full bg-yellow-100 text-yellow-500 border">
-            🗺️
+          <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full text-yellow-500 border">
+            <i class="fas fa-map"></i>
           </div>
           <h3 class="mt-4 font-semibold text-gray-900 text-xl">Arrange Tours</h3>
           <p class="text-gray-600 text-sm mt-2">
@@ -123,8 +125,8 @@
 
         <!-- Service 3 -->
         <div>
-          <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full bg-yellow-100 text-yellow-500">
-            🚖
+          <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full text-yellow-500 border">
+            <i class="fas fa-taxi"></i>
           </div>
           <h3 class="mt-4 font-semibold text-gray-900 text-xl">Taxi Service</h3>
           <p class="text-gray-600 text-sm mt-2">
@@ -134,8 +136,8 @@
 
         <!-- Service 4 -->
         <div>
-          <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full bg-yellow-100 text-yellow-500">
-            🏨
+          <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full text-yellow-500 border">
+            <i class="fas fa-hotel"></i>
           </div>
           <h3 class="mt-4 font-semibold text-gray-900 text-xl">Arrange Accommodation</h3>
           <p class="text-gray-600 text-sm mt-2">
@@ -298,20 +300,32 @@
          and create the perfect travel experience just for you.
       </p>
     </div>
-    <div class="flex justify-center space-x-8 mb-8 mt-10">
-        <div>
-            📍
+    <div class="flex justify-center space-x-8 mb-8 mt-10 text-gray-800">
+        <!-- Location -->
+        <div class="flex items-center space-x-3">
+            <div class="bg-yellow-400 text-white p-3 rounded-full flex items-center justify-center">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
             <p>186, Colombo Road, Mahamodara, Galle, Sri Lanka</p>
         </div>
-        <div>
-            📞
+
+        <!-- Phone -->
+        <div class="flex items-center space-x-3">
+            <div class="bg-yellow-400 text-white p-3 rounded-full flex items-center justify-center">
+                <i class="fas fa-phone"></i>
+            </div>
             <p>+94 (77) 722 0979</p>
         </div>
-        <div>
-            ✉️
+
+        <!-- Email -->
+        <div class="flex items-center space-x-3">
+            <div class="bg-yellow-400 text-white p-3 rounded-full flex items-center justify-center">
+                <i class="fas fa-envelope"></i>
+            </div>
             <p>galletourssrilanka@gmail.com</p>
         </div>
-    </div>
+</div>
+
 </div>
 
 <footer class="bg-gray-900 text-white text-center py-6">
@@ -341,45 +355,40 @@
         "https://www.galletourssrilanka.com/upload/slider/-127879947539_63323193367_1569569593_n.jpg"
     ];
 
-    let index = 0;
+    let heroIndex = 0;
     const slider = document.getElementById("slider");
     const navbar = document.querySelector("nav");
 
-    function showSlide(i) {
+    function showHeroSlide(i) {
         slider.style.backgroundImage = `url('${images[i]}')`;
     }
 
-    function nextSlide() {
-        index = (index + 1) % images.length;
-        showSlide(index);
+    function nextHeroSlide() {
+        heroIndex = (heroIndex + 1) % images.length;
+        showHeroSlide(heroIndex);
     }
 
-    function prevSlide() {
-        index = (index - 1 + images.length) % images.length;
-        showSlide(index);
+    function prevHeroSlide() {
+        heroIndex = (heroIndex - 1 + images.length) % images.length;
+        showHeroSlide(heroIndex);
     }
 
     // Auto-slide every 5 seconds
-    setInterval(nextSlide, 5000);
+    setInterval(nextHeroSlide, 5000);
 
     // Navbar hide/show logic
     let lastScrollTop = 0;
-    const heroHeight = slider.offsetHeight;
-
     window.addEventListener("scroll", function () {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScroll > lastScrollTop) {
-        // scrolling down → hide navbar
-        navbar.classList.add("-translate-y-full");
-    } else {
-        // scrolling up → show navbar
-        navbar.classList.remove("-translate-y-full");
-    }
+        if (currentScroll > lastScrollTop) {
+            navbar.classList.add("-translate-y-full");
+        } else {
+            navbar.classList.remove("-translate-y-full");
+        }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-});
-
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
 </script>
 <script>
   const slides = document.getElementById("slides");
